@@ -1,0 +1,28 @@
+// HEADER
+.ant-layout-header {
+  background-color: #85a392;
+}
+
+//LAYOUT
+.site-layout-content {
+    background: #f5b971;
+    padding: 24px;
+    min-height: 280px;
+    .selection .ant-select{
+      margin-right: 20px
+    }
+    .cards {
+      display: flex;
+      .ant-card {
+        margin-top: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+  #components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
