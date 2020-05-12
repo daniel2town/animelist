@@ -4,13 +4,21 @@ import { Select } from 'antd';
 
 const { Option } = Select;
 
-function select() {
+function select({ yearData, seasonData }) {
 
+    function handleYear(year) {
+      yearData(year);
+    }
+
+    function handleSeason(season){
+       seasonData(season);
+    }
   return (
     <div className="selection">
         <Select
             placeholder="Select a year"
             allowClear
+            onChange={handleYear}
         >
             <Option value="2020">2020</Option>
             <Option value="2019">2019</Option>
@@ -19,6 +27,7 @@ function select() {
         <Select
             placeholder="Select a season"
             allowClear
+            onChange={handleSeason}
         >
             <Option value="summer">Summer</Option>
             <Option value="spring">Spring</Option>

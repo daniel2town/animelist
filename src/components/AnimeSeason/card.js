@@ -1,24 +1,32 @@
-import React from 'react';
+import React from "react";
 
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row } from "antd";
+import ReadMoreReact from "read-more-react";
 
-const { Meta } = Card;
-
-function card() {
-
+function card({ data }) {
   return (
     <div className="cards">
-        <Row gutter={[16, 16]}>
+      <Row gutter={[16, 16]}>
+        {data &&
+          data.map((anime) => (
             <Col span={4}>
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={<img alt="anime" src={anime.image_url} />}
+                title={anime.title}
+              >
+                <ReadMoreReact
+                  text={anime.synopsis}
+                  min={80}
+                  ideal={100}
+                  max={200}
+                  readMoreText="Read more..."
+                />
+              </Card>
             </Col>
-        </Row>
+          ))}
+      </Row>
     </div>
   );
 }
