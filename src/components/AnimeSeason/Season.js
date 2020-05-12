@@ -7,7 +7,6 @@ import { fetchSeasonAnime } from '../../store/actions/anime';
 import { Layout, Breadcrumb, Button, Tooltip, Spin, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
-import Header from '../Header/index'
 import Select from '../AnimeSeason/select'
 import Card from '../AnimeSeason/card'
 
@@ -22,18 +21,16 @@ function season () {
   
   const animeData = { year, season }
   
-  const spin = () => {
-    return (
-      <Space size="large">
-        <Spin size="large" style={{display: 'center'}} />
-      </Space>
-    )
-  }
+  const spin = (
+    <Space size="large">
+      <Spin size="large" style={{display: 'center'}} />
+    </Space> 
+  )
 
   const onClick = () => {
       setLoading(true)
       setTimeout(() => {
-        spin();
+        spin;
       }, 500);
 
       setTimeout(() => {
@@ -45,7 +42,6 @@ function season () {
   return (
     <div>
       <Layout className="layout">
-        <Header />
         <Content style={{ padding: '0 50px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
             <Breadcrumb.Item>Seasons</Breadcrumb.Item>
@@ -59,7 +55,7 @@ function season () {
             </div>
             {loading && (
               <div className="spin">
-                {spin()}
+                {spin}
               </div>
             )}
             <Card data={seasonAnime} />
