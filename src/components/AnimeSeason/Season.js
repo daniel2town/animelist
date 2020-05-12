@@ -37,8 +37,8 @@ function season () {
       }, 500);
 
       setTimeout(() => {
-        dispatch(fetchSeasonAnime(animeData));
         setLoading(false)
+        dispatch(fetchSeasonAnime(animeData));
       }, 4000);
   }
 
@@ -48,7 +48,6 @@ function season () {
         <Header />
         <Content style={{ padding: '0 50px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>Seasons</Breadcrumb.Item>
           </Breadcrumb>
           <div className="site-layout-content">

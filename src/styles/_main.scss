@@ -3,6 +3,28 @@
   background-color: #f2a365;
   .ant-layout-header {
     background-color: #222831;
+    .logo {
+      display: flex;
+      .ant-menu {
+        background-color: #222831;
+        border-bottom: 0px solid #f2a365;
+        color: #ececec;
+        margin-top: -1px;
+      }
+      .ant-menu-horizontal .ant-menu-item-selected {
+        background-color: #f2a365;
+        border-bottom: 0px solid #f2a365;
+        color: #30475e;
+        a {
+          color: #ececec;
+          }
+      }
+      .ant-menu-item-active {
+        background-color: #30475e;
+        border-bottom: 0px solid #f2a365;
+        color: #ececec;
+      }
+    }
   }
   .site-layout-content {
     background: #30475e;
