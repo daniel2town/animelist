@@ -1,14 +1,14 @@
 import React from "react";
 
-import { Card, Col, Row } from "antd";
-import ReadMoreReact from "read-more-react";
+import { Card, Col, Row, Typography } from "antd";
+
+const { Paragraph } = Typography
 
 function card({ data }) {
   return (
     <div className="cards">
       <Row gutter={[16, 16]}>
-        {data &&
-          data.map((anime) => (
+        {data.map((anime) => (
             <Col span={4}>
               <Card
                 hoverable
@@ -16,13 +16,9 @@ function card({ data }) {
                 cover={<img alt="anime" src={anime.image_url} />}
                 title={anime.title}
               >
-                <ReadMoreReact
-                  text={anime.synopsis}
-                  min={80}
-                  ideal={100}
-                  max={200}
-                  readMoreText="Read more..."
-                />
+                <Paragraph ellipsis={{ row: 3, expandable: 'true' }}>
+                  {anime.synopsis}
+                </Paragraph>
               </Card>
             </Col>
           ))}
